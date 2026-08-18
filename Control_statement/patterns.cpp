@@ -127,7 +127,7 @@ int main() {
 
 
 
-//hollow triangle pattern
+//hollow pyramid pattern
 #include <iostream>
 using namespace std;
 int main() {

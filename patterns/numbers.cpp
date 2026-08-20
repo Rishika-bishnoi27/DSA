@@ -1,238 +1,13 @@
-//inverted triangle pattern
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cout<<"Enter number of rows: ";
-    cin>>n;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n-i;j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-
-//inverted left triangle pattern
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=i-1;j>0;j--){
-            cout<<" ";
-        }
-        for(int j=1;j<=n-i+1;j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-
-//pyramid pattern
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=n-i;j>=1;j--){
-            cout<<" ";
-        }
-        for(int j=1;j<=(2*i-1);j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-
-//inverted pyramid pattern
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<i;j++){
-            cout<<" ";
-        }
-        for(int j=2*n-1;j>=2*i-1;j--){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-//or
-
-
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<i;j++){
-            cout<<" ";
-        }
-        for(int j=1;j<=(2*n-1)-(2*i-2);j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-
-//diamond pattern
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=n-i;j>=1;j--){
-            cout<<" ";
-        }
-        for(int j=1;j<=(2*i-1);j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-    for(int i=n-1;i>=1;i--){
-        for(int j=n-i;j>=1;j--){
-            cout<<" ";
-        }
-        for(int j=1;j<=(2*i-1);j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-
-
-//hollow pyramid pattern
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=n-i;j>=1;j--){
-            cout<<" ";
-        }
-        for(int j=1;j<=(2*i-1);j++){
-            if(j==1 || j==(2*i-1) || i==n){
-                cout<<"*";
-            }
-            else{
-                cout<<" ";
-            }
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-
-//hollow triangle pattern
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=i;j++){
-            if(j==1 || j==i || i==n){
-                cout<<"*";
-            }else{
-                cout<<" ";
-            }
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-
-//hollow square pattern
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=n;j++){
-            if(i==1 || i==n || j==1 || j==n){
-                cout<<"*";
-            }else{
-                cout<<" ";
-            }
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-
-
-//butterfly pattern
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=i;j++){ 
-            cout<<"*";
-        }
-        for(int j=1;j<=2*(n-i);j++){   
-            cout<<" ";
-        }
-        for(int j=1;j<=i;j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-    for(int i=n;i>=1;i--){
-        for(int j=1;j<=i;j++){
-            cout<<"*";
-        }
-        for(int j=1;j<=2*(n-i);j++){
-            cout<<" ";
-        }
-        for(int j=1;j<=i;j++){
-            cout<<"*";
-        }
-        cout<<endl;
-    }
-    return 0;
-}
-
-
-
+//Number Patterns:
 
 
 //simple number pattern
+
+// 1
+// 1 2
+// 1 2 3
+// 1 2 3 4
+// 1 2 3 4 5
 #include <iostream>
 using namespace std;
 int main() {
@@ -252,6 +27,12 @@ int main() {
 
 
 //reversed number pattern
+
+//  1
+//  2 1
+//  3 2 1
+//  4 3 2 1
+//  5 4 3 2 1
 #include <iostream>
 using namespace std;
 int main() {
@@ -271,8 +52,39 @@ int main() {
 
 
 
+// Square of numbers:
+
+//  1 1 1 1 1
+//  2 2 2 2 2
+//  3 3 3 3 3
+//  4 4 4 4 4
+//  5 5 5 5 5
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    for(int i=1;i<=n; i++){
+        for(int j=1; j<=n; j++){
+            cout<<i;
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
+
+
+
 
 //inverted number triangle pattern
+
+//  1 2 3 4 5
+//  1 2 3 4
+//  1 2 3
+//  1 2
+//  1
 #include <iostream>
 using namespace std;
 int main() {
@@ -290,6 +102,11 @@ int main() {
 
 
 //floyd's triangle pattern
+
+//  1
+//  2 3
+//  4 5 6
+//  7 8 9 10
 #include <iostream>
 using namespace std;
 int main() {
@@ -311,6 +128,12 @@ int main() {
 
 
 //pascal's triangle pattern
+
+//      1 
+//     1 1 
+//    1 2 1 
+//   1 3 3 1 
+//  1 4 6 4 1
 #include <iostream>
 using namespace std;
 int main()
@@ -332,6 +155,8 @@ int main()
 
     return 0;
 }
+
+
 
 
 
@@ -374,6 +199,8 @@ int main()
 }
 
 
+
+// Diamond-shaped number pattern:
 
 //        1
 //      1 2 1
@@ -421,6 +248,8 @@ int main()
 }
 
 
+
+// Number pyramid (increment):
 
 //     1
 //    1 2  
@@ -560,7 +389,8 @@ int main()
 }
 
 
-// Sequence pattern:
+
+// 16. Sequence pattern:
 
 //  1
 //  2 3
@@ -573,19 +403,17 @@ int main()
 {
     int n;
     cin>>n;
-    int a=1;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=i;j++){
-            cout<<a<<" ";
-            a++;
+    for(int i=1; i<=n; i++){
+        int value=i;
+        for(int j=1; j<=i; j++){
+            cout<<value<<" ";
+            value++;
         }
-    
         cout<<endl;
     }
 
     return 0;
 }
-
 
 
 
@@ -627,3 +455,111 @@ int main()
 
     return 0;
 }
+
+
+
+
+// Mirrored number triangle:
+
+//        1
+//      1 2
+//    1 2 3
+//  1 2 3 4
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    for(int i=1; i<=n; i++){
+        for(int j=n-i; j>=1; j--){
+            cout<<"  ";
+        }
+        for(int j=1; j<=i; j++){
+            cout<<j<<" ";
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
+
+
+
+// Reverse pyramid:
+
+//  1 2 3 4
+//    1 2 3
+//      1 2
+//        1
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    for(int i=n; i>=1; i--){
+        for(int j=n-i; j>=1; j--){
+            cout<<"  ";
+        }
+        for(int j=1; j<=i; j++){
+            cout<<j<<" ";
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
+
+
+//or
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    for(int i=1; i<=n; i++){
+        for(int j=1; j<=i-1; j++){
+            cout<<" ";
+        }
+        for(int j=1; j<=n-i+1; j++){
+            cout<<j;
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
+
+
+
+
+// Diagonal number pattern:
+
+//  1
+//   2
+//    3
+//     4
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    for(int i=1; i<=n; i++){
+        for(int j=1; j<=i; j++){
+            if(j==i){
+                cout<<j;
+            }else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
+

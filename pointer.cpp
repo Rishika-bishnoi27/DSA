@@ -76,3 +76,38 @@ int main(){
     cout<<b;
     return 0;
 }
+
+
+
+// 7. Swap Two Variables Using Pointers :
+#include<iostream>
+using namespace std;
+int main(){
+    int a=10;
+    int b=20;
+    int *ptr1=&a;
+    int *ptr2=&b;
+    int temp=*ptr1;
+    *ptr1=*ptr2;
+    *ptr2=temp;
+    cout<<a<<" "<<b;
+    return 0;
+}
+
+//or
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a;
+    int b;
+    cin>>a>>b;
+    int *p1=&a;
+    int *p2=&b;
+    a=*p1+*p2;
+    b=*p1-*p2;
+    a=*p1-*p2;
+    cout<<a<<" "<<b;
+    return 0;
+}

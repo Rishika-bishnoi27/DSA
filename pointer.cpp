@@ -252,3 +252,6 @@ int main(){
     cout<<ptr1+1<<" "<<ptr2-1;
     return 0;
 }
+
+
+

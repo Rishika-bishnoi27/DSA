@@ -134,6 +134,11 @@ public:
 
 
 //58. Length of last word
+// Example 1:
+
+// Input: s = "Hello World"
+// Output: 5
+// Explanation: The last word is "World" with length 5.
 class Solution {
 public:
     int lengthOfLastWord(string s) {
@@ -156,6 +161,10 @@ public:
 
 
 //415. Add Strings
+// Example 1:
+
+// Input: num1 = "11", num2 = "123"
+// Output: "134"
 class Solution {
 public:
     string addStrings(string num1, string num2) {
@@ -189,5 +198,22 @@ public:
         reverse(ans.begin(), ans.end());
 
         return ans;
+    }
+};
+
+
+//836. Rectangle Overlap
+//Example 1:
+
+// Input: rec1 = [0,0,2,2], rec2 = [1,1,3,3]
+// Output: true
+class Solution {
+public:
+    bool isRectangleOverlap(vector<int>& rec1, vector<int>& rec2) {
+        if(rec1[0]< rec2[2] && rec2[0]< rec1[2] &&
+               rec1[1] < rec2[3] && rec2[1] < rec1[3]){
+                return true;
+        }
+        return false;
     }
 };

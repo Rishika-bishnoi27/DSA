@@ -245,3 +245,30 @@ public:
         }        
     }
 };
+
+
+
+//747. Largest Number At Least Twice of Others
+// Example 1:
+// Input: nums = [3,6,1,0]
+// Output: 1
+// Explanation: 6 is the largest integer.
+// For every other number in the array x, 6 is at least twice as big as x.
+// The index of value 6 is 1, so we return 1.
+class Solution {
+public:
+    int dominantIndex(vector<int>& nums) {
+        for (int i=0 ; i<nums.size() ; i++){
+            int count=0;
+            for (int j=0 ; j<nums.size() ; j++){
+                if(nums[i]>=2*nums[j] || i==j){
+                    count++;
+                    if(count==nums.size()){
+                        return i;
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+};

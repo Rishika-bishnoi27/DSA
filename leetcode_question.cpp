@@ -523,3 +523,73 @@ public:
         return st.empty();
     }
 };
+
+
+
+//832. Flipping an Image
+// Example 1:
+// Input: image = [[1,1,0],[1,0,1],[0,0,0]]
+// Output: [[1,0,0],[0,1,0],[1,1,1]]
+// Explanation: First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].
+// Then, invert the image: [[1,0,0],[0,1,0],[1,1,1]]
+class Solution {
+public:
+    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& image) {
+    for(auto &row:image){
+        reverse(row.begin(),row.end());
+        for(auto &x:row){
+            x=1-x;
+        }
+    }
+    return image;
+    }
+};
+
+
+
+//1572. Matrix Diagonal Sum
+// Example 1:
+// Input: mat = [[1,2,3],[4,5,6],[7,8,9]]
+// Output: 25
+// Explanation: Diagonals sum: 1 + 5 + 9 + 3
+class Solution {
+public:
+    int diagonalSum(vector<vector<int>>& mat) {
+        int n=mat.size();
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum+=mat[i][i];
+            sum+=mat[i][n-1-i];
+        }
+        if(n%2==1){
+            sum-=mat[n/2][n/2];
+        }
+        return sum;
+    }
+};
+
+
+
+
+//1672. Richest Customer Wealth
+// Example 1:
+// Input: accounts = [[1,2,3],[3,2,1]]
+// Output: 6
+// Explanation:
+// 1st customer has wealth = 1 + 2 + 3 = 6
+// 2nd customer has wealth = 3 + 2 + 1 = 6
+// Both customers are considered to have the richest wealth, which is 6.
+class Solution {
+public:
+    int maximumWealth(vector<vector<int>>& accounts) {
+        int maxi=0;
+        for(auto &row:accounts){
+            int sum=0;
+            for(auto &x:row){
+                sum+=x;
+            }
+            maxi=max(maxi,sum);
+        }
+        return maxi;
+    }
+};

@@ -593,3 +593,48 @@ public:
         return maxi;
     }
 };
+
+
+
+//54. Spiral Matrix
+// Example 1:
+// Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+// Output: [1,2,3,6,9,8,7,4,5]
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        int m=matrix.size();
+        int n=matrix[0].size();
+        int left=0;
+        int right=n-1;
+        int bottom=m-1;
+        int top=0;
+        vector<int>spiral;
+        while(left<=right && top<=bottom){
+            for(int i=left ; i<=right ; i++){
+                spiral.push_back(matrix[top][i]);
+            }
+            top=top+1;
+
+            for(int i=top ; i<=bottom ; i++){
+                spiral.push_back(matrix[i][right]);
+            }
+            right=right-1;
+
+            if(top<=bottom){
+                for(int i=right ; i>=left ; i--){
+                spiral.push_back(matrix[bottom][i]);
+                }
+                bottom=bottom-1;
+            }
+
+            if(left<=right){
+                for(int i=bottom ; i>=top ; i--){
+                spiral.push_back(matrix[i][left]);
+                }
+                left=left+1;
+            }
+        }
+        return spiral;
+    }
+};

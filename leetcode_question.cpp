@@ -638,3 +638,127 @@ public:
         return spiral;
     }
 };
+
+
+
+//724. Find Pivot Index
+// Example 1:
+// Input: nums = [1,7,3,6,5,6]
+// Output: 3
+// Explanation: The pivot index is 3.
+// Left sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11
+// Right sum = nums[4] + nums[5] = 5 + 6 = 11
+
+class Solution {
+public:
+    int pivotIndex(vector<int>& nums) {
+        for(int i=0; i<nums.size(); i++){
+            int low=0;
+            int high=0;
+            for(int j=i-1; j>=0; j--){
+                low += nums[j];
+            }
+            for(int k=i+1; k<nums.size(); k++){
+                high += nums[k];
+            }
+            if(low==high){
+                return i;
+            }
+        }
+        return -1;
+    }
+};
+
+
+
+
+//941. Valid Mountain Array
+// Example 1:
+// Input: arr = [2,1]
+// Output: false
+class Solution {
+public:
+    bool validMountainArray(vector<int>& arr) {
+        int length=arr.size();
+        int i=0;
+        // strictly increasing
+        while(i<length-1 && arr[i]<arr[i+1]){
+            i++;
+        }
+        // peak sholud not be at first or last
+        if(i==0 || i==length-1){
+            return false;
+        }
+        // strictly decreasing
+        while(i<length-1 && arr[i]>arr[i+1]){
+            i++;
+        }
+        if(i==length-1){
+            return true;
+        }
+        return false;
+    }
+};
+
+
+
+
+//566. Reshape the Matrix
+// Example 1:
+// Input: mat = [[1,2],[3,4]], r = 1, c = 4
+// Output: [[1,2,3,4]]
+class Solution {
+public:
+    vector<vector<int>> matrixReshape(vector<vector<int>>& mat, int r, int c) {
+        int m=mat.size();
+        int n=mat[0].size();
+        if(m*n!=r*c){
+            return mat;
+        }
+        int row=0,col=0;
+        vector<vector<int>> ans(r,vector<int>(c));
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                ans[row][col]=mat[i][j];
+                col++;
+                if(col==c){
+                col=0;
+                row++;
+            }
+
+            }
+        }
+        return ans;
+    }
+};
+
+
+
+
+//1299. Replace Elements with Greatest Element on Right Side
+// Example 1:
+// Input: arr = [17,18,5,4,6,1]
+// Output: [18,6,6,6,1,-1]
+// Explanation: 
+// - index 0 --> the greatest element to the right of index 0 is index 1 (18).
+// - index 1 --> the greatest element to the right of index 1 is index 4 (6).
+// - index 2 --> the greatest element to the right of index 2 is index 4 (6).
+// - index 3 --> the greatest element to the right of index 3 is index 4 (6).
+// - index 4 --> the greatest element to the right of index 4 is index 5 (1).
+// - index 5 --> there are no elements to the right of index 5, so we put -1.
+class Solution {
+public:
+    vector<int> replaceElements(vector<int>& arr) {
+        vector<int>vec;
+        for(int i=0;i<arr.size()-1;i++){
+            int maxi=0;
+            for(int j=i+1;j<arr.size();j++){
+                maxi=max(maxi,arr[j]);
+                
+            }
+            vec.push_back(maxi);
+        }
+        vec.push_back(-1);
+        return vec;
+    }
+};

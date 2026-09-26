@@ -789,3 +789,59 @@ public:
         return profit;
     }
 };
+
+
+
+
+
+//844. Backspace String Compare
+// Example 1:
+// Input: s = "ab#c", t = "ad#c"
+// Output: true
+// Explanation: Both s and t become "ac".
+class Solution {
+public:
+    bool backspaceCompare(string s, string t) {
+        stack<char> s1,s2;
+        for (char c : s){
+            if(c!='#'){
+                s1.push(c);
+            }else if(!s1.empty()) {
+                s1.pop();
+            }
+        }
+        for (char c : t){
+            if(c!='#'){
+                s2.push(c);
+            }else if(!s2.empty()) {
+                s2.pop();
+            }
+        } 
+        return s1==s2;
+    }
+};
+
+
+
+
+
+//1832. Check if the Sentence Is Pangram
+// Example 1:
+// Input: sentence = "thequickbrownfoxjumpsoverthelazydog"
+// Output: true
+// Explanation: sentence contains at least one of every letter of the English alphabet.
+class Solution {
+public:
+    bool checkIfPangram(string sentence) {
+        bool seen[26] = {false};
+        for(char ch : sentence){
+            seen[ch - 'a'] = true;
+        }
+        for(int i=0 ; i<26; i++){
+            if(!seen[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+};

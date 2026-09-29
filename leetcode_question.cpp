@@ -913,3 +913,24 @@ public:
 
     }
 };
+
+
+
+
+
+//136. Single Number
+// Example 1:
+// Input: nums = [2,2,1]
+// Output: 1
+class Solution {
+public:
+    int singleNumber(std::vector<int>& nums) {
+        // Intuition: sorted pairs sit next to each other
+        int n = nums.size();
+        std::sort(nums.begin(), nums.end());
+        for (int i = 0; i < n - 1; i += 2) {
+            if (nums[i] != nums[i + 1]) return nums[i];
+        }
+        return nums[n - 1];
+    }
+};

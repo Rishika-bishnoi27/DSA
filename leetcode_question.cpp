@@ -934,3 +934,29 @@ public:
         return nums[n - 1];
     }
 };
+
+
+
+
+//334. Increasing Triplet Subsequence
+// Example 1:
+// Input: nums = [1,2,3,4,5]
+// Output: true
+// Explanation: Any triplet where i < j < k is valid.
+class Solution {
+public:
+    bool increasingTriplet(vector<int>& nums) {
+        int first=INT_MAX;
+        int second=INT_MAX;
+        for(int i : nums){
+            if(i<=first){
+                first=i;
+            }else if(i<=second){
+                second=i;
+            }else{
+                return true;
+            }
+        }
+        return false;
+    }
+};

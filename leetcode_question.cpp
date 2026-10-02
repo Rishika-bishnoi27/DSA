@@ -994,3 +994,33 @@ public:
         return false;
     }
 };
+
+
+
+
+
+
+//118. Pascal's Triangle
+//Example 1:
+// Input: numRows = 5
+// Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+class Solution {
+public:
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> ans;
+
+        for (int i = 0; i < numRows; i++) {
+            vector<int> row;
+            int value = 1;
+
+            for (int k = 0; k <= i; k++) {
+                row.push_back(value);
+                value = value * (i - k) / (k + 1);
+            }
+
+            ans.push_back(row);
+        }
+
+        return ans;
+    }
+};

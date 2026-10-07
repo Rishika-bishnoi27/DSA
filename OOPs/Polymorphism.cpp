@@ -63,15 +63,6 @@ int main(){
 
 
 
-
-
-
-
-
-
-
-
-
 // Runtime polymorphism Definition: Runtime polymorphism, also known as dynamic polymorphism, is a type of polymorphism that is resolved during the execution of the program. In C++, runtime polymorphism is achieved through the use of virtual functions and inheritance. It allows a base class pointer or reference to call derived class methods at runtime, enabling flexibility and extensibility in object-oriented programming.
 //Function overriding is a feature in object-oriented programming that allows a derived class to provide a specific implementation of a function that is already defined in its base class. In C++, function overriding is achieved by defining a function in the derived class with the same name, return type, and parameters as the function in the base class.
 

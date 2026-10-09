@@ -1241,3 +1241,43 @@ public:
         return result;
     }
 };
+
+
+
+
+
+//414. Third Maximum Number
+// Example 1:
+// Input: nums = [3,2,1]
+// Output: 1
+// Explanation:
+// The first distinct maximum is 3.
+// The second distinct maximum is 2.
+// The third distinct maximum is 1.
+class Solution {
+public:
+    int thirdMax(vector<int>& nums) {
+        long long largest = LLONG_MIN;
+        long long second = LLONG_MIN;
+        long long third = LLONG_MIN;
+        
+        for(int i:nums){
+            if(i>largest){
+                third=second;
+                second=largest;
+                largest=i;
+            }
+            else if(i>second && i!=largest){
+                third=second;
+                second=i;
+            }
+            else if(i>third && i!=second && i!=largest){
+                third=i;
+            }
+        }
+        if (third == LLONG_MIN)
+            return largest;
+
+        return third;
+    }
+};

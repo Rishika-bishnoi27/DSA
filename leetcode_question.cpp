@@ -1430,3 +1430,31 @@ public:
         return row;        
     }
 };
+
+
+
+
+//455. Assign Cookies
+// Example 1:
+// Input: g = [1,2,3], s = [1,1]
+// Output: 1
+// Explanation: You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3. 
+// And even though you have 2 cookies, since their sizes are both 1, you can only make the child with greed factor 1 content.
+// You need to output 1.
+class Solution {
+public:
+    int findContentChildren(vector<int>& g, vector<int>& s) {
+        int n=g.size();
+        int m=s.size();
+        int l=0,r=0;
+        sort(g.begin(),g.end());
+        sort(s.begin(),s.end());
+        while(l<n && r<m){
+            if(g[l]<=s[r]){
+                l++;
+            }
+              r++;
+        }
+        return l;
+    }
+};

@@ -1458,3 +1458,32 @@ public:
         return l;
     }
 };
+
+
+
+
+
+
+// 905. Sort Array By Parity
+// Example 1:
+// Input: nums = [3,1,2,4]
+// Output: [2,4,3,1]
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        int i=0;
+        int j=nums.size()-1;
+        while(i<j){
+            if(nums[i]%2==0){
+                i++;
+            }
+            else if(nums[j]%2!=0){
+                j--;
+            }
+            else{
+                swap(nums[i],nums[j]);
+            }
+        }
+        return nums;
+    }
+};

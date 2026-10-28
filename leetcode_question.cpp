@@ -1866,3 +1866,23 @@ public:
         return prev;
     }
 };
+
+
+
+
+
+//561. Array Partition I
+// Example 1:
+// Input: nums = [1,4,3,2]
+// Output: 4
+class Solution {
+public:
+    int arrayPairSum(vector<int>& nums) {
+        std::sort(nums.begin(),nums.end());
+        int sum=0;
+        for(int i=0;i<nums.size();++i){
+            sum+=std::min(nums[i],nums[++i]);
+        }
+        return sum;
+    }
+};

@@ -1998,3 +1998,35 @@ public:
  * int param_3 = obj->top();
  * int param_4 = obj->getMin();
  */
+
+
+
+
+
+//503. Next Greater Element II
+// Example 1:
+// Input: nums = [1,2,1]
+// Output: [2,-1,2]
+// Explanation: The first 1's next greater number is 2; 
+// The number 2 can't find next greater number. 
+// The second 1's next greater number needs to search circularly, which is also 2.
+ class Solution {
+public:
+    vector<int> nextGreaterElements(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> ans(n, -1);
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < n; j++) {
+                int idx = (i + j) % n;
+
+                if (nums[idx] > nums[i]) {
+                    ans[i] = nums[idx];
+                    break;
+                }
+            }
+        }
+
+        return ans;
+    }
+};

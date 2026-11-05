@@ -2221,3 +2221,30 @@ public:
         return ans;
     }
 };
+
+
+
+
+
+
+//674. Longest Continuous Increasing Subsequence
+// Example 1:
+// Input: nums = [1,3,5,4,7]
+// Output: 3
+class Solution {
+public:
+    int findLengthOfLCIS(vector<int>& nums) {
+        if(nums.size()<=1)return nums.size();
+        int answer=1,count=1;
+        for(int i=0;i<nums.size()-1;i++){
+            if(nums[i]<nums[i+1]){
+                count++;
+                answer=max(answer,count);
+            }
+            else{
+                count=1;
+            }
+        }
+        return answer;
+    }
+};

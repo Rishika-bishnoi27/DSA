@@ -2451,3 +2451,29 @@ public:
         return false;
     }
 };
+
+
+
+
+
+
+//392. Is Subsequence
+// Example 1:
+// Input: s = "abc", t = "ahbgdc"
+// Output: true
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        int sp = 0;
+        int tp = 0;
+
+        while (sp < s.length() && tp < t.length()) {
+            if (s[sp] == t[tp]) {
+                sp++;
+            }
+            tp++;
+        }
+
+        return sp == s.length();        
+    }
+};

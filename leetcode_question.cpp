@@ -2603,3 +2603,36 @@ public:
         return s.length();
     }
 };
+
+
+
+
+
+//434. Number of Segments in a String
+// Example 1:
+// Input: s = "Hello, my name is John"
+// Output: 5
+// Explanation: The five segments are ["Hello,", "my", "name", "is", "John"]
+
+class Solution {
+public:
+    int countSegments(string s) {
+      if(s.empty()){
+        return 0;
+      }  int cnt=0;bool m=false;
+      for(char ch:s){
+        if(ch!=' '){
+            m=true;
+            continue;
+        }
+        if(ch==' ' && m){
+            cnt++;
+            m=false;
+        }
+      }
+      if(m){
+        cnt++;
+      }
+      return cnt;
+    }
+};

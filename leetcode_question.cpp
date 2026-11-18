@@ -2767,3 +2767,30 @@ public:
     }
 };
 
+
+
+
+
+
+
+// 111. Minimum Depth of Binary Tree
+// Example 1:
+// Input: root = [3,9,20,null,null,15,7]
+// Output: 2
+class Solution {
+public:
+    int minDepth(TreeNode* root) {
+        if (root == nullptr) return 0;
+
+        if (root->left == nullptr)
+            return 1 + minDepth(root->right);
+
+        if (root->right == nullptr)
+            return 1 + minDepth(root->left);
+
+        return 1 + min(
+            minDepth(root->left),
+            minDepth(root->right)
+        );
+    }
+};

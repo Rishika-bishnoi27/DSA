@@ -153,9 +153,11 @@ void level_order_traversal(Node* root){
     queue<Node*> q;
     q.push(root);
     while(!q.empty()){
+        int n = q.size();
         Node* temp = q.front();
         q.pop();
         cout<<temp->data<<" ";
+        cout<<n<<" ";
         if(temp->left != nullptr){
             q.push(temp->left);
         }

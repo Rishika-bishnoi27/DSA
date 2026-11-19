@@ -2794,3 +2794,40 @@ public:
         );
     }
 };
+
+
+
+
+//  482. License Key Formatting
+// Example 1:
+// Input: s = "5F3Z-2e-9-w", k = 4
+// Output: "5F3Z-2E9W"
+// Explanation: The string s has been split into two parts, each part has 4 characters.
+// Note that the two extra dashes are not needed and can be removed.
+class Solution {
+public:
+    string licenseKeyFormatting(string s, int k) {
+        string ans = "";
+        int count = 0;
+        for(int i = s.size()-1; i >= 0; i--){
+            if(s[i] == '-') continue;
+            else if(s[i] >= 97 && s[i] <= 122){
+                char ch;
+                ch = s[i]-32;
+                ans += ch;
+                count++;
+            }
+            else{
+                ans += s[i];
+                count++;
+            }
+            if(count == k){
+                count = 0;
+                ans += '-';
+            }
+        }
+        reverse(ans.begin(),ans.end());
+        if(ans[0] == '-') return ans.substr(1);
+        return ans;
+    }
+};

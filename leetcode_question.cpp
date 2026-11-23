@@ -2921,3 +2921,25 @@ public:
         return ans;
     }
 };
+
+
+
+
+
+
+
+// 521. longest uncommon subsequence I
+// Example 1:
+// Input: a = "aba", b = "cdc"
+// Output: 3
+// Explanation: One longest uncommon subsequence is "aba" because "aba" is a subsequence of "aba" but not "cdc".
+// Note that "cdc" is also a longest uncommon subsequence.
+class Solution {
+public:
+    int findLUSlength(string a, string b) {
+        if(a==b){return -1;}
+        if(a.length()>b.length()){return a.length();}
+        if(b.length()>a.length()){return b.length();}
+        return a.length();
+    }
+};

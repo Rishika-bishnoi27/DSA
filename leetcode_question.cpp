@@ -2974,3 +2974,30 @@ public:
         return s;
     }
 };
+
+
+
+
+// 100. Same Tree
+// Example 1:
+// Input: p = [1,2,3], q = [1,2,3]
+// Output: true
+class Solution {
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        // If both nodes are NULL, they are identical
+        if (p == NULL && q == NULL) {
+            return true;
+        }
+        // If only one of the nodes is NULL, they are not identical
+        if (p == NULL || q == NULL) {
+            return false;
+        }
+        // Check if values are equal and recursively check left and right subtrees
+        if (p->val == q->val) {
+            return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
+        }
+        // Values are not equal, they are not identical
+        return false;
+    }
+};
